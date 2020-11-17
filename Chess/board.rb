@@ -1,5 +1,8 @@
 require_relative "piece"
 class Board
+
+    attr_reader :board
+    
     def initialize
         @board = Array.new(8) {Array.new(8)}
         self.populate
@@ -25,10 +28,19 @@ class Board
     end
 
     def move_piece(color, start_pos, end_pos)
+        if self[start_pos].is_a?(Piece) && valid_position?(end_pos)
+            self[end_pos] = self[start_pos]
+            self[start_pos] = nil
+        else
+            raise "You can't make that move"
+        end
+
     end
 
     def valid_position?(pos)
-
+        row, col = pos
+        return true if row.between?(0,7) && col.between?(0,7) 
+        false
     end
     
     def add_piece (piece, pos)
