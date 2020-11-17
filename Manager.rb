@@ -5,4 +5,10 @@ class Manager < Employee
         @employees = employees
     end
 
+    def bonus(multiplier, employees)
+        sum = employees.inject(0) {|accu, employee| accu += employee.salary } 
+        sum * multiplier
+    end
+
+    attr_reader :employees
 end
