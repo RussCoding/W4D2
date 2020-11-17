@@ -1,4 +1,5 @@
 require "singleton"
 class Null_Piece < Piece
-    include singleton
+    include Singleton
+
 end

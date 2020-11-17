@@ -10,11 +10,12 @@ class Piece
     end
 
     def valid_moves?
-
+        if self.empty?
+        end
     end
 
     def position=(val)
-
+        @board[@position] = val
     end
 
     def symbol
@@ -22,7 +23,7 @@ class Piece
     end
 
     def to_s 
-
+        self.symbol
     end 
 
     def inspect
