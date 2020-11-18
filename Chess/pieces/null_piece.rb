@@ -1,8 +1,20 @@
 require "singleton"
 class Null_Piece < Piece
+    # include Singleton
 
-    #maybe initialize a default color
+     def initialize(board, position)
+        @color = :null
+        @board = board
+        @position = position
+        
+    end 
     
-    include Singleton
+    def symbol 
+        :□
+    end
+    
+    private
+    
+   
 
 end

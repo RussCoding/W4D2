@@ -41,9 +41,9 @@ module Slideable
             if cases == 0 
                 return not_blocked
             elsif cases == 1
-                not_blocked << board[last_pos]
+                not_blocked << last_pos
             elsif cases == 2
-                not_blocked << board[last_pos]
+                not_blocked << last_pos
                 return not_blocked
             end
         end
@@ -55,10 +55,14 @@ module Slideable
     def possible_move?(pos)
         
         if board.valid_position?(pos)
-            if board[pos].color == self.color
-                return 0
-            elsif  board[pos].is_a?(Null_Piece)
+
+            if board[pos] == nil
                 return 1
+            elsif board[pos].color == self.color
+                return 0
+            # elsif  board[pos].is_a?(Null_Piece)
+            # elsif board[pos] == nil
+            #     return 1
             else 
                 return 2
             end
