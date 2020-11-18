@@ -8,7 +8,9 @@ module Slideable
     end
 
     def moves
-        
+        #iterates through result of move_dirs
+        # grow_unblocked_moves on each move.
+        #return array of moves
     end
     
     
@@ -17,8 +19,18 @@ module Slideable
     DIAGONAL_DIRS = [[1,1], [-1,1], [1,-1], [-1,-1]]
 
     def grow_unblocked_moves_in_dir(dx,dy)
+
+        #uses pieces current position to increment by (dx,dy) until no longer valid.
+         # + will need check each space before incrementing
+         # + pos = current_pos
+         #
     end
 
     def move_dirs
     end
+
+    def possible_move?
+
+    end
+
 end
