@@ -19,7 +19,7 @@ class Piece
     end
 
     def symbol
-
+        :♔
     end
 
     def to_s 
@@ -27,7 +27,7 @@ class Piece
     end 
 
     def inspect
-        @color
+        @symbol
     end
 
     private

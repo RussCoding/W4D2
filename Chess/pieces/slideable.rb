@@ -28,11 +28,20 @@ module Slideable
         #uses pieces current position to increment by (dx,dy) until no longer valid.
          # + will need check each space before incrementing
          # + pos = current_pos
+       
         not_blocked = []
-        blocked = false
+
         last_pos = self.position.dup #initializes it to pieces position
-        while !blocked
+        while true
             
+            last_pos[0] += dx
+            last_pos[1] += dy
+
+            if possible_move?(last_pos)
+                not_blocked << last_pos
+            else
+                return not_blocked
+            end
         end
     end
 
@@ -40,13 +49,17 @@ module Slideable
     end
 
     def possible_move?(pos)
-        if board[pos].color == self.color
-            return false
-        elsif  board[pos].color != self.color
-            return true
-        else
-            true 
+        
+        if board.valid_position?(pos)
+            if board[pos].color == self.color
+                return false
+            elsif  board[pos].color != self.color
+                return true
+            else
+                true 
+            end
         end
+        false
     end
 
 end
