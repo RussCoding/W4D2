@@ -56,13 +56,10 @@ module Slideable
         
         if board.valid_position?(pos)
 
-            if board[pos] == nil
+            if board[pos].is_a?(Null_Piece)
                 return 1
             elsif board[pos].color == self.color
                 return 0
-            # elsif  board[pos].is_a?(Null_Piece)
-            # elsif board[pos] == nil
-            #     return 1
             else 
                 return 2
             end
