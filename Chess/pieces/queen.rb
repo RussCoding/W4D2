@@ -5,4 +5,8 @@ class Queen < Piece
     def symbol
         :Q
     end
+
+    def move_dirs
+        horizontal_dirs + diagonal_dirs
+    end
 end
