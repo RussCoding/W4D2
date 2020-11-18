@@ -16,7 +16,7 @@ module Stepable
 
     def possible_move?(pos)
         if board.valid_position?(pos)
-            if board[pos].is_a?(Null_Piece)
+            if board[pos].is_a?(NullPiece)
                 return true
             elsif board[pos].color != self.color
                 return true

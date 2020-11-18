@@ -32,10 +32,10 @@ class Board
         #@boardPiece.new("red", self, [0,0] )
          #@board[0].each_with_index {|square, idx| Piece.new(:Red, self, [0,idx])}
         # null = Null_Piece.instace(self, [2,idx])
-        @board[2].each_with_index {|ele, idx| self[[2,idx]] = Null_Piece.instance(self, [2,idx])  }
-        @board[3].each_with_index {|ele, idx| self[[3,idx]] = Null_Piece.instance(self, [3,idx])  }
-        @board[4].each_with_index {|ele, idx| self[[4,idx]] = Null_Piece.instance(self, [4,idx])  }
-        @board[5].each_with_index {|ele, idx| self[[5,idx]] = Null_Piece.instance(self, [5,idx])  }
+        @board[2].each_with_index {|ele, idx| self[[2,idx]] = NullPiece.instance()  }
+        @board[3].each_with_index {|ele, idx| self[[3,idx]] = NullPiece.instance()  }
+        @board[4].each_with_index {|ele, idx| self[[4,idx]] = NullPiece.instance()  }
+        @board[5].each_with_index {|ele, idx| self[[5,idx]] = NullPiece.instance()  }
 
         #  @board[1].map! {|square| Queen.new(:red, self, self)}
         # @board[6].map! {|square| Piece.new(:Red, self, [3,3])}

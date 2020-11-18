@@ -1,16 +1,12 @@
 require "singleton"
-class Null_Piece < Piece
-    # include Singleton
-
-     def initialize(board, position)
-        @color = :null
-        @board = board
-        @position = position
-        
+class NullPiece < Piece
+    include Singleton
+     def initialize()
+        @color = :none
     end 
     
     def symbol 
-        :□
+        " "
     end
     
     private
