@@ -1,6 +1,15 @@
 # PHASE 2
+
+
 def convert_to_int(str)
+  
   Integer(str)
+  
+  rescue ArgumentError
+    
+    return nil
+  # end 
+
 end
 
 # PHASE 3
@@ -18,7 +27,10 @@ def feed_me_a_fruit
   puts "Hello, I am a friendly monster. :)"
 
   puts "Feed me a fruit! (Enter the name of a fruit:)"
+  retry
   maybe_fruit = gets.chomp
+  
+
   reaction(maybe_fruit) 
 end  
 
