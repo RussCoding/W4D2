@@ -39,11 +39,20 @@ def feed_me_a_fruit
   end
 end  
 
+class FiveYearsRuleError < StandardError; end
+class NameError < StandardError; end
+class PastimeError < StandardError; end
+
 # PHASE 4
 class BestFriend
   def initialize(name, yrs_known, fav_pastime)
+    raise NameError if name.length <= 0
     @name = name
+
+    raise FiveYearsRuleError if yrs_known < 5
     @yrs_known = yrs_known
+ 
+    raise PastimeError if fav_pastime.length <= 0
     @fav_pastime = fav_pastime
   end
 
