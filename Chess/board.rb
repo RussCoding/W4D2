@@ -1,4 +1,6 @@
 require_relative "./pieces/piece"
+require_relative "./pieces/queen"
+
 class Board
 
     attr_reader :board
@@ -21,8 +23,9 @@ class Board
     end
 
     def populate
-        @board[0].each_with_index {|square, idx| Queen.new(:Red, self, [0,idx])}
-        # @board[1].map! {|square| Piece.new(:Red, self, [3,3])}
+        #@boardPiece.new("red", self, [0,0] )
+         #@board[0].each_with_index {|square, idx| Piece.new(:Red, self, [0,idx])}
+         @board[1].map! {|square| Queen.new(:red, self, [3,3])}
         # @board[6].map! {|square| Piece.new(:Red, self, [3,3])}
         # @board[7].map! {|square| Piece.new(:Red, self, [3,3])}
         # self = Queen.new(:Red, self, [3,3])

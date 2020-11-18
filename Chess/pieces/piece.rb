@@ -1,3 +1,4 @@
+
 class Piece
     def initialize(color, board, position)
         @color = color
@@ -10,8 +11,8 @@ class Piece
     end
 
     def valid_moves?
-        if self.empty?
-        end
+        # if self.empty?
+        # end
     end
 
     def position=(val)
@@ -27,7 +28,7 @@ class Piece
     end 
 
     def inspect
-        @symbol
+        symbol
     end
 
     private

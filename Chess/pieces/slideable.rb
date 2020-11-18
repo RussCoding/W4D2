@@ -36,10 +36,14 @@ module Slideable
             
             last_pos[0] += dx
             last_pos[1] += dy
-
-            if possible_move?(last_pos)
-                not_blocked << last_pos
-            else
+            # 0: stop loop, :1 keep going, :2 add to array and then stop
+            cases = possible_move?(last_pos)
+            if cases == 0 
+                return not_blocked
+            elsif cases == 1
+                not_blocked << board[last_pos]
+            elsif cases == 2
+                not_blocked << board[last_pos]
                 return not_blocked
             end
         end
@@ -52,14 +56,14 @@ module Slideable
         
         if board.valid_position?(pos)
             if board[pos].color == self.color
-                return false
-            elsif  board[pos].color != self.color
-                return true
-            else
-                true 
+                return 0
+            elsif  board[pos].is_a?(Null_Piece)
+                return 1
+            else 
+                return 2
             end
         end
-        false
+        0
     end
 
 end
