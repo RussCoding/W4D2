@@ -25,13 +25,18 @@ end
 
 def feed_me_a_fruit
   puts "Hello, I am a friendly monster. :)"
-
-  puts "Feed me a fruit! (Enter the name of a fruit:)"
-  retry
-  maybe_fruit = gets.chomp
-  
-
-  reaction(maybe_fruit) 
+  begin
+    puts "Feed me a fruit! (Enter the name of a fruit:)"
+    maybe_fruit = gets.chomp
+    reaction(maybe_fruit)
+  rescue StandardError
+    if maybe_fruit == "coffee" 
+      retry
+    else
+      puts "Im not hungry anymore"
+      #return nil
+    end
+  end
 end  
 
 # PHASE 4
